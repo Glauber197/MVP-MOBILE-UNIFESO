@@ -1,11 +1,9 @@
 venv/
-.venv/
-
+node_modules/
+Backend/venv/
 __pycache__/
 *.pyc
-
-.vscode/
-
-pip-log.txt
-
-*.sqlite3
+db.sqlite3
+.env
+frontend/node_modules/
+frontend/dist/
