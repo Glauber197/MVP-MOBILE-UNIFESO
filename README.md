@@ -1,7 +1,7 @@
 # MVP - Back-End Development
 
 ## Equipe de Desenvolvimento
-- **Anderson Macharett Pedrozo Rocha**
+- **TESTE**
 - **Carlos Vinicius de Queiroz Barroso Correa**
 - **Glauber Carlos dos Santos Medeiros**
 - **Marcos Paulo Gomes Pagayme**
