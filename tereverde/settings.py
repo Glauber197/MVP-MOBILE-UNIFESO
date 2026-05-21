@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,12 +78,8 @@ WSGI_APPLICATION = 'tereverde.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'MbvrqOlwOtkqTgvZosnQjAuGEjRjcFar',
-        'HOST': 'maglev.proxy.rlwy.net',
-        'PORT': '45730',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -138,3 +136,5 @@ REST_FRAMEWORK = {
 
 ADMIN_SITE_HEADER = 'Administração Terê-Verde'
 ADMIN_SITE_TITLE = 'Terê-Verde'
+
+CORS_ALLOW_ALL_ORIGINS = True
