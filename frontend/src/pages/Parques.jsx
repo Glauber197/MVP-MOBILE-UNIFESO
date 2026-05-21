@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import api from "../services/api";
 
 export default function Parques() {
@@ -9,13 +10,11 @@ export default function Parques() {
       try {
         const resposta = await api.get("parques/");
 
-        console.log("Parques recebidos:");
         console.log(resposta.data);
 
         setParques(resposta.data);
 
       } catch (erro) {
-        console.log("Erro:");
         console.log(erro);
       }
     }
@@ -24,47 +23,40 @@ export default function Parques() {
   }, []);
 
   return (
-    <div
-      style={{
-        padding: "24px",
-      }}
-    >
+    <div style={{ padding: 24 }}>
+
       <h1>🌿 Parques</h1>
 
-      {parques.length === 0 ? (
-        <p>Nenhum parque encontrado.</p>
-      ) : (
-        parques.map((parque) => (
-          <div
-            key={parque.id}
-            style={{
-              background: "white",
-              padding: "20px",
-              marginBottom: "20px",
-              borderRadius: "12px",
-              border: "1px solid #ddd",
-            }}
-          >
-            <h2>{parque.nome_display}</h2>
-
-            <p>
-              {parque.descricao_geral}
-            </p>
-
-            <p>
-              Altitude:
-              {" "}
-              {parque.altitude_media} m
-            </p>
-
-            <p>
-              Horário:
-              {" "}
-              {parque.horario_funcionamento}
-            </p>
-          </div>
-        ))
+      {parques.length === 0 && (
+        <p>Carregando...</p>
       )}
+
+      {parques.map((parque) => (
+        <div
+          key={parque.id}
+          style={{
+            border: "1px solid gray",
+            padding: 20,
+            marginBottom: 20,
+          }}
+        >
+          <h2>
+            {parque.nome_display}
+          </h2>
+
+          <p>
+            {parque.descricao_geral}
+          </p>
+
+          <Link to={`/parques/${parque.id}`}>
+            <button>
+              Explorar
+            </button>
+          </Link>
+
+        </div>
+      ))}
+
     </div>
   );
 }

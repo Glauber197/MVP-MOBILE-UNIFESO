@@ -4,18 +4,11 @@ import Navbar from "../components/Navbar";
 
 import Home from "../pages/Home";
 import Parques from "../pages/Parques";
-
-function Trilhas() {
-  return <h1>Trilhas</h1>;
-}
-
-function Eventos() {
-  return <h1>Eventos</h1>;
-}
-
-function Login() {
-  return <h1>Login</h1>;
-}
+import Trilhas from "../pages/Trilhas";
+import Eventos from "../pages/Eventos";
+import Login from "../pages/Login";
+import DetalhesParque from "../pages/DetalhesParque";
+import Biodiversidade from "../pages/Biodiversidade";
 
 export default function AppRoutes() {
   return (
@@ -24,26 +17,12 @@ export default function AppRoutes() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-
-        <Route
-          path="/parques"
-          element={<Parques />}
-        />
-
-        <Route
-          path="/trilhas"
-          element={<Trilhas />}
-        />
-
-        <Route
-          path="/eventos"
-          element={<Eventos />}
-        />
-
-        <Route
-          path="/login"
-          element={<Login />}
-        />
+        <Route path="/parques" element={<Parques />} />
+        <Route path="/parques/:id" element={<DetalhesParque />} />
+        <Route path="/trilhas" element={<Trilhas />} />
+        <Route path="/eventos" element={<Eventos />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/biodiversidade" element={<Biodiversidade />} />
       </Routes>
     </BrowserRouter>
   );

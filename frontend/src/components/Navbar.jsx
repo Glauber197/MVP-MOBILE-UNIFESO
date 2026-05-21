@@ -5,60 +5,41 @@ export default function Navbar() {
     <nav
       style={{
         background: "#2F6B3D",
-        padding: "16px",
+        padding: "16px 32px",
         display: "flex",
-        gap: "20px",
+        gap: 24,
+        alignItems: "center",
       }}
     >
-      <Link
-        to="/"
-        style={{
-          color: "white",
-          textDecoration: "none",
-        }}
-      >
+      <Link style={linkStyle} to="/">
         Início
       </Link>
 
-      <Link
-        to="/parques"
-        style={{
-          color: "white",
-          textDecoration: "none",
-        }}
-      >
+      <Link style={linkStyle} to="/parques">
         Parques
       </Link>
 
-      <Link
-        to="/trilhas"
-        style={{
-          color: "white",
-          textDecoration: "none",
-        }}
-      >
+      <Link style={linkStyle} to="/trilhas">
         Trilhas
       </Link>
 
-      <Link
-        to="/eventos"
-        style={{
-          color: "white",
-          textDecoration: "none",
-        }}
-      >
+      <Link style={linkStyle} to="/eventos">
         Eventos
       </Link>
 
-      <Link
-        to="/login"
-        style={{
-          color: "white",
-          textDecoration: "none",
-        }}
-      >
+      <Link style={linkStyle} to="/biodiversidade">
+        Biodiversidade
+      </Link>
+
+      <Link style={linkStyle} to="/login">
         Admin
       </Link>
     </nav>
   );
 }
+
+const linkStyle = {
+  color: "white",
+  textDecoration: "none",
+  fontWeight: "bold",
+};
