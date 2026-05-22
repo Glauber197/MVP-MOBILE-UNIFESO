@@ -18,23 +18,30 @@ export default function Biodiversidade() {
   }, []);
 
   return (
-    <div style={{ padding: 24 }}>
-      <h1>🦜 Biodiversidade</h1>
+    <main className="page">
+      <h1 className="page-title">🦜 Biodiversidade</h1>
 
-      {itens.length === 0 ? (
-        <p>Nenhum registro cadastrado.</p>
-      ) : (
-        itens.map((item) => (
-          <div
-            key={item.id}
-            style={{
-              background: "white",
-              padding: 20,
-              marginBottom: 20,
-              borderRadius: 12,
-              border: "1px solid #ddd",
-            }}
-          >
+      <section className="card-grid">
+        {itens.map((item) => (
+          <article className="card" key={item.id}>
+            {item.imagem && (
+  <img
+    src={
+      item.imagem.startsWith("http")
+        ? item.imagem
+        : `http://127.0.0.1:8000${item.imagem}`
+    }
+    alt={item.nome_comum}
+    style={{
+      width: "100%",
+      height: 260,
+      objectFit: "cover",
+      borderRadius: 14,
+      marginBottom: 20,
+    }}
+  />
+)}
+
             <h2>{item.nome_comum}</h2>
 
             <p>
@@ -42,7 +49,8 @@ export default function Biodiversidade() {
             </p>
 
             <p>
-              <strong>Categoria:</strong> {item.categoria_display || item.categoria}
+              <strong>Categoria:</strong>{" "}
+              {item.categoria_display || item.categoria}
             </p>
 
             <p>{item.descricao}</p>
@@ -51,9 +59,9 @@ export default function Biodiversidade() {
               <strong>Status de conservação:</strong>{" "}
               {item.status_conservacao_display || item.status_conservacao}
             </p>
-          </div>
-        ))
-      )}
-    </div>
+          </article>
+        ))}
+      </section>
+    </main>
   );
 }

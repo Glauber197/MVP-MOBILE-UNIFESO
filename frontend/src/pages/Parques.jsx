@@ -9,11 +9,7 @@ export default function Parques() {
     async function carregar() {
       try {
         const resposta = await api.get("parques/");
-
-        console.log(resposta.data);
-
         setParques(resposta.data);
-
       } catch (erro) {
         console.log(erro);
       }
@@ -23,40 +19,48 @@ export default function Parques() {
   }, []);
 
   return (
-    <div style={{ padding: 24 }}>
+    <main className="page">
+      <h1 className="page-title">🌿 Parques</h1>
 
-      <h1>🌿 Parques</h1>
+      <section className="card-grid">
+        {parques.map((parque) => (
+          <article className="card" key={parque.id}>
+            {parque.imagem && (
+              <img
+                src={
+                  parque.imagem.startsWith("http")
+                    ? parque.imagem
+                    : `http://127.0.0.1:8000${parque.imagem}`
+                }
+                alt={parque.nome_display}
+                style={{
+                  width: "100%",
+                  height: 240,
+                  objectFit: "cover",
+                  borderRadius: 14,
+                  marginBottom: 20,
+                }}
+              />
+            )}
 
-      {parques.length === 0 && (
-        <p>Carregando...</p>
-      )}
+            <h2>{parque.nome_display}</h2>
 
-      {parques.map((parque) => (
-        <div
-          key={parque.id}
-          style={{
-            border: "1px solid gray",
-            padding: 20,
-            marginBottom: 20,
-          }}
-        >
-          <h2>
-            {parque.nome_display}
-          </h2>
+            <p>{parque.descricao_geral}</p>
 
-          <p>
-            {parque.descricao_geral}
-          </p>
+            <p>
+              <strong>Altitude:</strong> {parque.altitude_media} m
+            </p>
 
-          <Link to={`/parques/${parque.id}`}>
-            <button>
-              Explorar
-            </button>
-          </Link>
+            <p>
+              <strong>Horário:</strong> {parque.horario_funcionamento}
+            </p>
 
-        </div>
-      ))}
-
-    </div>
+            <Link to={`/parques/${parque.id}`}>
+              <button className="primary-button">Explorar</button>
+            </Link>
+          </article>
+        ))}
+      </section>
+    </main>
   );
 }

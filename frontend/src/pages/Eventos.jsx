@@ -17,40 +17,32 @@ export default function Eventos() {
     carregarEventos();
   }, []);
 
-  return (
-    <div style={{ padding: 24 }}>
-      <h1>📅 Eventos</h1>
+  function formatarData(data) {
+    if (!data) return "Não informado";
+    return new Date(data).toLocaleString("pt-BR");
+  }
 
-      {eventos.length === 0 ? (
-        <p>Nenhum evento disponível.</p>
-      ) : (
-        eventos.map((evento) => (
-          <div
-            key={evento.id}
-            style={{
-              background: "white",
-              padding: 20,
-              marginBottom: 20,
-              borderRadius: 12,
-              border: "1px solid #ddd",
-            }}
-          >
+  return (
+    <main className="page">
+      <h1 className="page-title">📅 Eventos</h1>
+
+      <section className="card-grid">
+        {eventos.map((evento) => (
+          <article className="card" key={evento.id}>
             <h2>{evento.titulo}</h2>
 
             <p>{evento.descricao}</p>
 
             <p>
-              <strong>Início:</strong> {new Date(evento.data_inicio).toLocaleString("pt-BR")}
+              <strong>Início:</strong> {formatarData(evento.data_inicio)}
             </p>
 
             <p>
-              <strong>Fim:</strong> {evento.data_fim
-  ? new Date(evento.data_fim).toLocaleString("pt-BR")
-  : "Não informado"}
+              <strong>Fim:</strong> {formatarData(evento.data_fim)}
             </p>
-          </div>
-        ))
-      )}
-    </div>
+          </article>
+        ))}
+      </section>
+    </main>
   );
 }

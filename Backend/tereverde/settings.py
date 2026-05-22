@@ -138,3 +138,6 @@ ADMIN_SITE_HEADER = 'Administração Terê-Verde'
 ADMIN_SITE_TITLE = 'Terê-Verde'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

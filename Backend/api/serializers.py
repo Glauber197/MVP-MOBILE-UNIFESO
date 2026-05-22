@@ -18,6 +18,7 @@ class TrilhaSerializer(serializers.ModelSerializer):
             'tempo_estimado_horas', 
             'status_aberta',
             'status_aberta_display', 
+            'imagem',
         )
 
     def get_status_aberta_display(self, obj):
@@ -49,8 +50,11 @@ class ParqueSerializer(serializers.ModelSerializer):
             'descricao_geral', 
             'altitude_media', 
             'horario_funcionamento',
+            'imagem',
             'trilhas',  
             'eventos',
+            
+            
         )
 
 class BiodiversidadeSerializer(serializers.ModelSerializer):
@@ -64,4 +68,5 @@ class BiodiversidadeSerializer(serializers.ModelSerializer):
             'categoria', 
             'status_conservacao',
             'descricao',
+            'imagem',
         )

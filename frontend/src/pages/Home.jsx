@@ -27,7 +27,7 @@ export default function Home() {
             Explore parques, trilhas, eventos e a biodiversidade de Teresópolis.
           </p>
 
-          <Link to="/parques">
+          <Link to="/parques/2">
             <button
   style={{
     padding: "16px 32px",

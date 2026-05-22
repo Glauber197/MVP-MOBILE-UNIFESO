@@ -1,45 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav
-      style={{
-        background: "#2F6B3D",
-        padding: "16px 32px",
-        display: "flex",
-        gap: 24,
-        alignItems: "center",
-      }}
-    >
-      <Link style={linkStyle} to="/">
-        Início
+    <header className="navbar">
+      <Link to="/" className="navbar-logo">
+        🌿 Terê Verde
       </Link>
 
-      <Link style={linkStyle} to="/parques">
-        Parques
-      </Link>
-
-      <Link style={linkStyle} to="/trilhas">
-        Trilhas
-      </Link>
-
-      <Link style={linkStyle} to="/eventos">
-        Eventos
-      </Link>
-
-      <Link style={linkStyle} to="/biodiversidade">
-        Biodiversidade
-      </Link>
-
-      <Link style={linkStyle} to="/login">
-        Admin
-      </Link>
-    </nav>
+      <nav className="navbar-links">
+        <NavLink to="/">Início</NavLink>
+        <NavLink to="/parques/2">Parques</NavLink>
+        <NavLink to="/trilhas">Trilhas</NavLink>
+        <NavLink to="/eventos">Eventos</NavLink>
+        <NavLink to="/biodiversidade">Biodiversidade</NavLink>
+        <NavLink to="/login">Admin</NavLink>
+      </nav>
+    </header>
   );
 }
-
-const linkStyle = {
-  color: "white",
-  textDecoration: "none",
-  fontWeight: "bold",
-};

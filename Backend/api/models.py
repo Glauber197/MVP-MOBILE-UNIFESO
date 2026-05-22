@@ -37,6 +37,8 @@ class Parque(models.Model):
     def __str__(self):
         return self.get_nome_display()
     
+    imagem = models.ImageField(upload_to='parques/', blank=True, null=True)
+    
 
 # 2. Modelo de Trilha.
 
@@ -93,6 +95,8 @@ class Trilha(models.Model):
         status = "ABERTA" if self.status_aberta else "FECHADA"
         return f"{self.nome} ({status}) - {self.parque.get_nome_display()}"
     
+    imagem = models.ImageField(upload_to='trilhas/', blank=True, null=True)
+    
 
 # 3. Modelo de Evento
 
@@ -143,6 +147,8 @@ class Biodiversidade(models.Model):
     Registro de espécies de fauna e flora presentes nas Unidades de Conservação.
     """
 
+    imagem = models.ImageField(upload_to='biodiversidade/', blank=True, null=True)
+
     parque = models.ForeignKey(
         Parque,
         on_delete=models.CASCADE,
@@ -184,3 +190,4 @@ class Biodiversidade(models.Model):
 
     def __str__(self):
         return f"{self.nome_comum} ({self.nome_cientifico})"
+    
