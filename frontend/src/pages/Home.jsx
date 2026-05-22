@@ -20,7 +20,7 @@ export default function Home() {
       >
         <div style={{ maxWidth: 800 }}>
           <h1 style={{ fontSize: 72, marginBottom: 16 }}>
-            Circuito Terê Verde
+            Terê Verde Online
           </h1>
 
           <p style={{ fontSize: 28, marginBottom: 32 }}>
@@ -70,7 +70,7 @@ export default function Home() {
           <Card titulo="🌲 Parques" texto="Conheça as unidades de conservação de Teresópolis." link="/parques" />
           <Card titulo="🥾 Trilhas" texto="Veja trilhas abertas, dificuldade e tempo estimado." link="/trilhas" />
           <Card titulo="📅 Eventos" texto="Acompanhe eventos ambientais e atividades guiadas." link="/eventos" />
-          <Card titulo="🦜 Biodiversidade" texto="Descubra espécies da fauna e flora local." link="/biodiversidade" />
+          <Card titulo="🦜 Biodiversidade" texto="Descubra espécies da fauna e flora do Parque Nacional." link="/biodiversidade" />
         </div>
       </section>
     </div>

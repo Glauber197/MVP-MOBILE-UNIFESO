@@ -17,9 +17,10 @@ class TrilhaViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class EventoViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Evento.objects.filter(
-        Q(data_fim__isnull=True) | Q(data_fim__gte=timezone.now())
-    )
+    queryset = Evento.objects.all().order_by('-data_inicio')
+    serializer_class = EventoSerializer
+    ordering_fields = ['data_inicio']
+    filterset_fields = ['parque']
     serializer_class = EventoSerializer
     ordering_fields = ['data_inicio']
     filterset_fields = ['parque']
