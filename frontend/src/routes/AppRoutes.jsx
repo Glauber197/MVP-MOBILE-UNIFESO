@@ -6,7 +6,6 @@ import Home from "../pages/Home";
 import Parques from "../pages/Parques";
 import Trilhas from "../pages/Trilhas";
 import Eventos from "../pages/Eventos";
-import Login from "../pages/Login";
 import DetalhesParque from "../pages/DetalhesParque";
 import Biodiversidade from "../pages/Biodiversidade";
 
@@ -21,7 +20,6 @@ export default function AppRoutes() {
         <Route path="/parques/:id" element={<DetalhesParque />} />
         <Route path="/trilhas" element={<Trilhas />} />
         <Route path="/eventos" element={<Eventos />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/biodiversidade" element={<Biodiversidade />} />
       </Routes>
     </BrowserRouter>
