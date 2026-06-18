@@ -26,3 +26,9 @@ class BiodiversidadeAdmin(admin.ModelAdmin):
     list_filter = ('categoria', 'status_conservacao', 'parque')
     search_fields = ('nome_comum', 'nome_cientifico', 'descricao')
     ordering = ('nome_comum',)
+
+    from django.contrib import admin
+from django.shortcuts import redirect
+
+
+admin.site.site_url = "http://localhost:5173"

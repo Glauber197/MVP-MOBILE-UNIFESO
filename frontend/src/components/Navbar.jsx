@@ -15,7 +15,7 @@ export default function Navbar() {
         <NavLink to="/biodiversidade">Biodiversidade</NavLink>
         <a
   href="http://127.0.0.1:8000/admin"
-  target="_blank"
+ 
   rel="noreferrer"
 >
   Admin
