@@ -35,7 +35,7 @@
 ## 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
+git clone https://github.com/Glauber197/MVP-MOBILE-UNIFESO
 ```
 
 Entrar na pasta
