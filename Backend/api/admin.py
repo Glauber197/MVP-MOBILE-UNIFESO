@@ -1,17 +1,19 @@
 from django.contrib import admin
 from .models import Parque, Trilha, Evento, Biodiversidade
 
-# Register your models here.
+
 @admin.register(Parque)
 class ParqueAdmin(admin.ModelAdmin):
     list_display = ('nome', 'altitude_media', 'horario_funcionamento')
     search_fields = ('nome',)
+
 
 @admin.register(Trilha)
 class TrilhaAdmin(admin.ModelAdmin):
     list_display = ('nome', 'parque', 'dificuldade', 'distancia_km', 'status_aberta')
     list_filter = ('parque', 'dificuldade', 'status_aberta')
     search_fields = ('nome', 'descricao')
+
 
 @admin.register(Evento)
 class EventoAdmin(admin.ModelAdmin):
@@ -20,6 +22,7 @@ class EventoAdmin(admin.ModelAdmin):
     date_hierarchy = 'data_inicio'
     search_fields = ('titulo', 'descricao')
 
+
 @admin.register(Biodiversidade)
 class BiodiversidadeAdmin(admin.ModelAdmin):
     list_display = ('nome_comum', 'nome_cientifico', 'categoria', 'parque', 'status_conservacao')
@@ -27,8 +30,5 @@ class BiodiversidadeAdmin(admin.ModelAdmin):
     search_fields = ('nome_comum', 'nome_cientifico', 'descricao')
     ordering = ('nome_comum',)
 
-    from django.contrib import admin
-from django.shortcuts import redirect
 
-
-admin.site.site_url = "http://localhost:5173"
+admin.site.site_url = "http://localhost:4173/"

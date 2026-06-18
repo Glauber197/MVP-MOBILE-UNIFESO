@@ -23,12 +23,12 @@ export default function Eventos() {
   }
 
   return (
-    <main className="page">
+    <main className="page event-page">
       <h1 className="page-title">📅 Eventos</h1>
 
-      <section className="card-grid">
+      <section className="card-grid event-grid">
         {eventos.map((evento) => (
-          <article className="card" key={evento.id}>
+          <article className="card event-card" key={evento.id}>
             <h2>{evento.titulo}</h2>
 
             <p>{evento.descricao}</p>
