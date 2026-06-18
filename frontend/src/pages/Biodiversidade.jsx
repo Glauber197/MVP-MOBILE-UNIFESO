@@ -34,8 +34,8 @@ export default function Biodiversidade() {
     alt={item.nome_comum}
     style={{
       width: "100%",
-      height: 260,
-      objectFit: "cover",
+      height: "auto",
+      objectFit: "contain",
       borderRadius: 14,
       marginBottom: 20,
     }}
