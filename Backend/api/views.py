@@ -21,10 +21,6 @@ class EventoViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = EventoSerializer
     ordering_fields = ['data_inicio']
     filterset_fields = ['parque']
-    serializer_class = EventoSerializer
-    ordering_fields = ['data_inicio']
-    filterset_fields = ['parque']
-
 
 class BiodiversidadeViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Biodiversidade.objects.all()
