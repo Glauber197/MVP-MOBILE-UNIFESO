@@ -18,29 +18,22 @@ export default function Biodiversidade() {
   }, []);
 
   return (
-    <main className="page">
+    <main className="page biodiversity-page">
       <h1 className="page-title">🦜 Biodiversidade</h1>
 
-      <section className="card-grid">
+      <section className="card-grid biodiversity-grid">
         {itens.map((item) => (
-          <article className="card" key={item.id}>
+          <article className="card biodiversity-card" key={item.id}>
             {item.imagem && (
-  <img
-    src={
-      item.imagem.startsWith("http")
-        ? item.imagem
-        : `http://127.0.0.1:8000${item.imagem}`
-    }
-    alt={item.nome_comum}
-    style={{
-      width: "100%",
-      height: "auto",
-      objectFit: "contain",
-      borderRadius: 14,
-      marginBottom: 20,
-    }}
-  />
-)}
+              <img
+                src={
+                  item.imagem.startsWith("http")
+                    ? item.imagem
+                    : `http://127.0.0.1:8000${item.imagem}`
+                }
+                alt={item.nome_comum}
+              />
+            )}
 
             <h2>{item.nome_comum}</h2>
 

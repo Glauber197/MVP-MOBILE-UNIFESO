@@ -275,3 +275,40 @@ border: 1px solid rgba(47, 107, 61, 0.08);
   }
 }
 
+.biodiversity-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.biodiversity-card {
+  min-height: auto;
+}
+
+.biodiversity-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: fill;
+  object-position: center;
+  background: #eef5ea;
+  border-radius: 14px;
+  margin-bottom: 18px;
+
+}
+
+@media (max-width: 1200px) {
+  .biodiversity-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .biodiversity-card {
+    width: 100%;
+  }
+
+  .biodiversity-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: fill;
+  }
+}
