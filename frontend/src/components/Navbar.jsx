@@ -9,7 +9,7 @@ export default function Navbar() {
 
       <nav className="navbar-links">
         <NavLink to="/">Início</NavLink>
-        <NavLink to="/parques/2">Parques</NavLink>
+        <NavLink to="/parques">Parques</NavLink>
         <NavLink to="/trilhas">Trilhas</NavLink>
         <NavLink to="/eventos">Eventos</NavLink>
         <NavLink to="/biodiversidade">Biodiversidade</NavLink>

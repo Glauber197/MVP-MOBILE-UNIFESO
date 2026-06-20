@@ -1,6 +1,4 @@
 from rest_framework import viewsets
-from django.db.models import Q
-from django.utils import timezone
 from .models import Parque, Trilha, Evento, Biodiversidade
 from .serializers import ParqueSerializer, TrilhaSerializer, EventoSerializer, BiodiversidadeSerializer
 

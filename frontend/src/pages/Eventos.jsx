@@ -40,6 +40,9 @@ export default function Eventos() {
             <p>
               <strong>Fim:</strong> {formatarData(evento.data_fim)}
             </p>
+            {evento.disponibilidade && (
+  <span className="badge">{evento.disponibilidade}</span>
+)}
           </article>
         ))}
       </section>
