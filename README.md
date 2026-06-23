@@ -1,10 +1,10 @@
 # MVP - Mobile
 
 ## Equipe de Desenvolvimento
-- **Glauber Carlos dos Santos Medeiros**
+- **Glauber Medeiros**
 
 # Projeto - Circuito Terê Verde
-- **Plataforma para cadastro e consulta de Parques, Trilhas, Eventos e Biodiversidade na cidade de Teresópolis**
+- **Aplicação web progressiva (PWA) desenvolvida para centralizar informações sobre parques, trilhas, eventos e biodiversidade da cidade de Teresópolis, permitindo consulta pública e gerenciamento através de painel administrativo.**
 
 ## 🚀 Tecnologias utilizadas
 
@@ -27,7 +27,13 @@
 ### Banco de dados
 
 - SQLite
+  
+### PWA
 
+- vite-plugin-pwa
+- Service Worker
+- Web App Manifest
+  
 ---
 
 # Como executar o projeto
@@ -41,7 +47,7 @@ git clone https://github.com/Glauber197/MVP-MOBILE-UNIFESO
 Entrar na pasta
 
 ```bash
-cd NOME-DO-REPOSITORIO
+cd MVP-MOBILE-UNIFESO
 ```
 
 ---
@@ -104,7 +110,7 @@ python manage.py runserver
 Backend disponível em
 
 ```
-http://127.0.0.1:8000/
+http://127.0.0.1:8000/api/
 ```
 
 Área administrativa
@@ -147,5 +153,12 @@ http://localhost:5173/
 ## 📱 PWA
 
 O projeto está preparado para funcionar como Progressive Web App (PWA), permitindo instalação diretamente pelo navegador.
+
+Funcionalidades:
+
+- Instalação na tela inicial
+- Interface responsiva
+- Cache de arquivos estáticos
+- Funcionamento offline para páginas já visitadas
 
 ---
